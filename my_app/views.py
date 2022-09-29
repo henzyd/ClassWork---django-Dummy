@@ -22,7 +22,7 @@ def detail_page(request, pk):
 
 class CreateHospital(LoginRequiredMixin, CreateView):
     model = models.Hospital
-    fields = ['title', 'location']
+    fields = ['title', 'location', 'email']
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
@@ -31,7 +31,7 @@ class CreateHospital(LoginRequiredMixin, CreateView):
 
 class UpdateHospital(LoginRequiredMixin,  UserPassesTestMixin, UpdateView):
     model = models.Hospital
-    fields = ['title', 'location']
+    fields = ['title', 'location', 'email']
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
