@@ -1,0 +1,17 @@
+{% extends 'my_app/base.html' %}
+<!--  -->
+<!--  -->
+<!--  -->
+
+{% block contents %}
+<!--  -->
+<h1>Update Page</h1>
+<form method="POST">
+  {% csrf_token %}
+  <!--  -->
+  {{ form }}
+
+  <button type="submit">Update</button>
+</form>
+<!--  -->
+{% endblock contents %}

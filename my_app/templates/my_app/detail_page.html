@@ -1,0 +1,20 @@
+{% extends 'my_app/base.html' %}
+<!--  -->
+<!--  -->
+<!--  -->
+
+{% block contents %}
+<!--  -->
+<h1>Detail Page</h1>
+<div>
+  <h1>{{ hospital.title }}</h1>
+  <p>{{ hospital.location }}</p>
+  {% if user == hospital.owner %}
+  <a href="{% url 'update_page' hospital.id %}">Update</a>
+  <a href="{% url 'delete_page' hospital.id %}">Delete</a>
+  {% else %}
+  <a href="{% url 'home_page' %}">Home</a>
+  {% endif %}
+</div>
+<!--  -->
+{% endblock contents %}

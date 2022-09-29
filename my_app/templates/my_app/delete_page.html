@@ -1,0 +1,17 @@
+{% extends 'my_app/base.html' %}
+<!--  -->
+<!--  -->
+<!--  -->
+
+{% block contents %}
+<!--  -->
+<h1>Delete Page</h1>
+<form method="POST">
+  {% csrf_token %}
+  <p>Are You sure you want to DELETE</p>
+  <p>{{ hospital.title }}</p>
+  <button type="submit">YES</button>
+  <a href="{% url 'home_page' %}">NO</a>
+</form>
+<!--  -->
+{% endblock contents %}

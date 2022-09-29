@@ -1,0 +1,19 @@
+{% extends 'my_app/base.html' %}
+<!--  -->
+<!--  -->
+<!--  -->
+
+{% block contents %}
+<!--  -->
+<h1>Home Page</h1>
+{% for hospital in hospitals %}
+<div>
+  <h1>{{ hospital.title }}</h1>
+  <p>{{ hospital.location }}</p>
+  <p>{{ hospital.email }}</p>
+  <p>{{ hospital.owner }}</p>
+  <a href="{% url 'detail_page' hospital.id %}">Detail</a>
+</div>
+{% endfor %}
+<!--  -->
+{% endblock contents %}

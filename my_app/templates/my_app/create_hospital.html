@@ -1,0 +1,17 @@
+{% extends 'my_app/base.html' %}
+<!--  -->
+<!--  -->
+<!--  -->
+
+{% block contents %}
+<!--  -->
+<h1>Create Page</h1>
+<form method="POST">
+  {% csrf_token %}
+  <!--  -->
+  {{ form }}
+
+  <button type="submit">Create</button>
+</form>
+<!--  -->
+{% endblock contents %}
